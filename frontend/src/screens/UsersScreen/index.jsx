@@ -2,25 +2,16 @@ import './usersScreen.css';
 import Header from '../../components/Header';
 import { Fragment } from 'react';
 import UserCard from '../../components/UserCard';
+import { useState, useEffect } from 'react';
 
 function UsersScreen(){
-    const users = [
-        {
-            id: 1,
-            name: "Julia Soares",
-            email: "julia@email.com",
-        },
-        {
-            id: 2,
-            name: "Amanda Teles",
-            email: "amanda@email.com",
-        },
-        {
-            id: 3,
-            name: "Conceição Jatoba",
-            email: "conceicao@email.com",
-        },
-    ]
+
+    const [users, setUsers] = useState([]);
+    const [page, setPage] = useState(1);
+
+    useEffect(()=>{
+        console.log('Prazer, eu sou o useEffect!')
+    },[page]);
 
     return(
         <Fragment>
@@ -34,6 +25,7 @@ function UsersScreen(){
             email={user.email}
             />
                 )}
+                <button onClick={()=>setPage(page+1)}>Próxima página</button>
         </main>
         </Fragment>
     );

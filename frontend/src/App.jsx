@@ -4,8 +4,8 @@ import UsersScreen from './screens/UsersScreen';
 
 function App() {
 return(
-<UserRegisterScreen/>
-//<UsersScreen/>
+//<UserRegisterScreen/>
+<UsersScreen/>
 );
  
 }
