@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import { Fragment } from 'react';
 import UserCard from '../../components/UserCard';
 import { useState, useEffect } from 'react';
+import api from "../../api/api";
 
 function UsersScreen(){
 
@@ -10,8 +11,12 @@ function UsersScreen(){
     const [page, setPage] = useState(1);
 
     useEffect(()=>{
-        console.log('Prazer, eu sou o useEffect!')
-    },[page]);
+        async function getUsers(){
+            const response = await api.get('/users');
+            setUsers(response.data)
+        }
+        getUsers();
+    },[]);
 
     return(
         <Fragment>
