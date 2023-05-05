@@ -1,7 +1,7 @@
 import './userRegisterScreen.css';
 import Header from '../../components/Header'
 import { useState } from 'react';
-import api from '../../api/api'
+import api from '../../api/api';
 
 function UserRegisterScreen() {
 
