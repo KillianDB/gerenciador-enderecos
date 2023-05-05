@@ -30,7 +30,7 @@ function UsersScreen(){
             email={user.email}
             />
                 )}
-                <button onClick={()=>setPage(page+1)}>Próxima página</button>
+                {/* <button onClick={()=>setPage(page+1)}>Próxima página</button> */}
         </main>
         </Fragment>
     );

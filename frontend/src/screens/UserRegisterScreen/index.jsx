@@ -1,6 +1,7 @@
 import './userRegisterScreen.css';
 import Header from '../../components/Header'
 import { useState } from 'react';
+import api from '../../api/api'
 
 function UserRegisterScreen() {
 
@@ -12,10 +13,18 @@ function UserRegisterScreen() {
     setContador(contador + 1)
   }
 
-  function handleSubmit(event) {
+  async function handleSubmit(event) {
     event.preventDefault();
 
-    console.log(`Nome: ${name} | Email: ${email}`)
+    await api.post('/users',{
+      name,
+      email
+    })
+
+    setName('');
+    setEmail('');
+
+    alert('Usuário cadastrado');
   };
 
   return (

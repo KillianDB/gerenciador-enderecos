@@ -1,11 +1,14 @@
 import './App.css';
 import UserRegisterScreen from './screens/UserRegisterScreen';
 import UsersScreen from './screens/UsersScreen';
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
   return(
-    // <UserRegisterScreen />
-    <UsersScreen />
+    <Routes>
+      <Route path='/' element={<UsersScreen/>}/>
+      <Route path='/registro' element={<UserRegisterScreen/>}/>
+    </Routes>
   );
   
 }
